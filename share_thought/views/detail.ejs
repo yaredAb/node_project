@@ -2,7 +2,7 @@
 <%- include('./partials/head.ejs'); %>
 
     <body>
-        <div class="wrapper"> <!--the whole screen wrapper-->
+        <div class="detail-wrapper"> <!--the whole screen wrapper-->
             <%- include('./partials/nav-bar.ejs'); %>
                 <div class="post-detail-wrapper"><!--the post goes here-->
                     <div class="post-detail-card"><!--the post card-->
@@ -23,22 +23,61 @@
                             <i class="fa-solid fa-copy"></i>
                         </div>
                     </div><!--the post card ended here-->
-                    <div class="profile">
-                        <div class="circle-avatar">
-                            <i class="fa-solid fa-user fa-2x"></i>
+                    <div class="side-tab">
+                        <div class="profile">
+                            <div class="circle-avatar">
+                                <i class="fa-solid fa-user fa-2x"></i>
+                            </div>
+                            <p class="name">Yared Sebsbe</p>
                         </div>
-                        <p class="name">Yared Sebsbe</p>
+                        <div class="comment-home">
+                            <div class="comments">
+                                <div class="comment-nav">
+                                    <h1>Comments</h1>
+                                    <div class="comment-write" id="write_toogle">
+                                        <i class="fa-solid fa-pen-nib" id="ic"></i>
+                                        <span id="ic-text">write</span>
+                                    </div>
+                                </div>
+                                <div class="comment-card-wrapper">
+                                    <div class="comment-send" id="comment_input">
+                                        <input type="text" placeholder="name">
+                                        <input type="text" placeholder="comment">
+                                        <button>send</button>
+                                    </div>
+                                    <div class="comment-card">
+                                        <p>Yared Sebsbe</p>
+                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
+                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
+                                            deleniti.</span>
+                                    </div>
+                                    <div class="comment-card">
+                                        <p>Yared Sebsbe</p>
+                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
+                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
+                                            deleniti.</span>
+                                    </div>
+                                    <div class="comment-card">
+                                        <p>Yared Sebsbe</p>
+                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
+                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
+                                            deleniti.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </div><!--wrapper ended here-->
         <script src="https://kit.fontawesome.com/d3383a5202.js" crossorigin="anonymous"></script>
         <script>
+
             const likeBtn = document.getElementById('like');
 
             let isLiked = false;
 
             likeBtn.addEventListener('click', () => {
-                isLiked = !isLiked; 
+                isLiked = !isLiked;
 
                 if (isLiked) {
                     likeBtn.style.color = 'red';
@@ -46,6 +85,27 @@
                     likeBtn.style.color = 'gray';
                 }
             });
+
+            const write_toogle = document.getElementById('write_toogle');
+            const comment_input = document.getElementById('comment_input');
+            const ic = document.getElementById('ic');
+            const ic_txt = document.getElementById('ic-text')
+
+            let isClicked = false;
+
+            write_toogle.addEventListener('click', () => {
+                isClicked = !isClicked;
+
+                if (isClicked) {
+                    comment_input.style.display = "block"
+                    ic.setAttribute('class', 'fa-solid fa-circle-xmark')
+                    ic_txt.innerHTML = 'close'
+                } else {
+                    comment_input.style.display = "none"
+                    ic.setAttribute('class', 'fa-solid fa-pen-nib')
+                    ic_txt.innerHTML = 'write'
+                }
+            })
         </script>
     </body>
 
