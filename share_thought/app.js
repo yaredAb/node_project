@@ -15,6 +15,3 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 app.use(router);
-// app.use((req,res) =>{
-//     res.render('404',{title: "page not found"})
-// })
