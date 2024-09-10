@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nerko+One&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+a{
+    text-decoration: none;
+}
+p{
+    margin: 0;
+}
+
+.wrapper{
+    width: 70%;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+.logo-link{
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+.logo-link h1{
+    font-size: 3em;
+}
+nav ul{
+    display: flex;
+    gap: 10px;
+    font-family: "Josefin Sans", sans-serif;
+}
+li{
+    list-style: none;
+    margin-left: 20px;
+}
+li a{
+    color: #777;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.post-wrapper{
+    display: flex;
+    margin: 3em auto;
+    width: 70%;
+}
+
+.post-card{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-text{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "PT Sans", sans-serif;
+}
+.post-text p{
+    color: #777;
+    padding: 10px 0;
+}
+
+.tags{
+    text-decoration: none;
+    color: #cd5600;
+    padding: 5px;
+}
+
+.detail-btn{
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0px;
+    background-color: #8fc9f3;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #0a0a0a;
+    font-family: "Josefin Sans", sans-serif;
+}
+.detail-btn:hover{
+    background-color: #75bdf0;
+    transition: 0.5s ease-in;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    
+}
+.icons .fa-solid{
+    cursor: pointer;
+    color: gray;
+}
+.comment-wrapper{
+    display: none;
+}
+.comment{
+    display: flex;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f3ed;
+    border-radius: 10px;
+    font-family: "Josefin Sans", sans-serif;
+}
+.comment p{
+    width: 50%;
+}
+.comment span{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-family: "PT Sans", sans-serif;
+}
+
+.profile p{
+    margin-top: 8px;
+}
+.circle-avatar{
+    background-color: #bde5fe;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.circle-avatar .fa-solid{
+    margin-top: 5px;
+}
+
+/* form style */
+form{
+    max-width: 400px;
+    margin: 30px auto;
+}
+.field{
+    display: block;
+    margin-top: 10px;
+}
+.field label, .genera{
+    text-transform: capitalize;
+    font-family: "Josefin Sans", sans-serif;
+}
+.field input,
+.field textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    font-family: "PT Sans", sans-serif;
+    border-radius: 7px;
+    border: 1px solid #777;
+}
+.field textarea{
+    height: 120px;
+}
+.categories{
+    display: flex;
+    justify-content: space-between;
+}
+/* .sub-category{
+    
+} */
+.sub-category .category{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.category input[type="checkbox"] {
+    height: 25px;
+    width: 25px;
+}
+.category label{
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+}
+form button{
+    padding: 6px 10px;
+    margin-top: 20px;
+    background-color:rgb(234, 55, 91);
+    border: 0;
+    color: white;
+    font-size: 1.3em;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Nerko One", cursive;
+}
+form button:hover{
+    background-color: crimson;
+    transition: 0.5s ease-in;
+}
+.warn{
+    text-align: center;
+    margin-top: 20px;
+}
+.warn h1{
+    font-size: 80px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.warn p{
+    font-size: 30px;
+    font-family: "PT Sans", sans-serif;
+}
+
+.post-detail-text{
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "PT Sans", sans-serif;
+}
+.post-detail-text p{
+    color: #777;
+    font-size: 16px;
+}
+.post-detail-card{
+    width: 80%;
+}
+.post-detail-wrapper{
+    display: flex;
+    margin: 3em 0;
+    width: 100%;
+}

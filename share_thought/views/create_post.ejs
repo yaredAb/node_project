@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs');  %>
+<body>
+    <div class="wrapper"> <!--the whole screen wrapper-->
+        <%- include('./partials/nav-bar.ejs');  %>
+            <form action="/vents" method="post">
+                <div class="field">
+                    <label for="title">title</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="field">
+                    <label for="thought">thought</label>
+                    <textarea name="text" id="thought"></textarea>
+                </div>
+                <label class="genera">Genera</label>
+                <div class="categories"> <!--the whole category layout-->                    
+                    <div class="sub-category">
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="relationship" name="rShip">
+                            <label for="relationship">relationship</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="relationship" name="family">
+                            <label for="relationship">family</label>
+                        </div>
+                    </div><!--sub-category-1-->
+
+                    <div class="sub-category">
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="business" name="business">
+                            <label for="business">business</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="experience" name="experience">
+                            <label for="experience">experience</label>
+                        </div>
+                    </div><!--sub-category-2-->
+
+                    <div class="sub-category">
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="funny" name="funny">
+                            <label for="funny">funny</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" class="chkBox" id="other" name="other">
+                            <label for="other">other</label>
+                        </div>
+                    </div><!--sub-category-3-->
+                </div>
+                <button type="submit" class="submit">Share</button>
+            </form>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>

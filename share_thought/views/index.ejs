@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs');  %>
+<body>
+    <div class="wrapper"> <!--the whole screen wrapper-->
+        <%- include('./partials/nav-bar.ejs');  %>
+
+        <% if(posts.length > 0) {
+            posts.forEach(post =>{ %>
+            <div class="post-wrapper"><!--the post goes here-->
+                <div class="post-card"><!--the post card-->
+                    <div class="post-text">
+                        <h3><%= post.title %></h3>
+                        <% 
+                        var text = '' 
+                        if(post.text.length > 400 ){
+                            text = post.text.substring(0,400) + '...';
+                        }
+                        else{
+                            text = post.text
+                        }
+                        %>
+                        <p id="post_text"><%= text %></p>
+                        <% post.tags.forEach(tag=>{%>
+                            <a href="/vents/<%= tag %>" class="tags">#<%= tag %></a>
+                        <% }) %>
+                    </div>
+
+                    <a href="/detail/<%= post._id %>" class="detail-btn">Detail</a>
+                </div><!--the post card ended here-->
+                <div class="profile">
+                    <div class="circle-avatar">
+                        <i class="fa-solid fa-user fa-2x"></i>
+                    </div>
+                    <p class="name">Yared Sebsbe</p>
+                </div>
+            </div>
+        <% })
+        } else{ %>
+        <h3>We don't have vent for now...</h3>
+        <% } %>
+
+    </div><!--wrapper ended here-->
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/d3383a5202.js" crossorigin="anonymous"></script>
+</body>
+</html>

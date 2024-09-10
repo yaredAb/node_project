@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<%- include('./partials/head.ejs'); %>
+
+    <body>
+        <div class="wrapper"> <!--the whole screen wrapper-->
+            <%- include('./partials/nav-bar.ejs'); %>
+                <div class="post-detail-wrapper"><!--the post goes here-->
+                    <div class="post-detail-card"><!--the post card-->
+                        <div class="post-detail-text">
+                            <h3>
+                                <%= result.title %>
+                            </h3>
+                            <p>
+                                <%= result.text %>
+                            </p>
+                            <% result.tags.forEach(tag=>{%>
+                                <a href="/vents/<%= tag %>" class="tags">#<%= tag %></a>
+                                <% }) %>
+                        </div>
+                        <div class="icons"><!--the icons-->
+                            <i class="fa-solid fa-heart fa-1x" id="like"></i>
+                            <i class="fa-solid fa-comment"></i>
+                            <i class="fa-solid fa-copy"></i>
+                        </div>
+                    </div><!--the post card ended here-->
+                    <div class="profile">
+                        <div class="circle-avatar">
+                            <i class="fa-solid fa-user fa-2x"></i>
+                        </div>
+                        <p class="name">Yared Sebsbe</p>
+                    </div>
+                </div>
+        </div><!--wrapper ended here-->
+        <script src="https://kit.fontawesome.com/d3383a5202.js" crossorigin="anonymous"></script>
+        <script>
+            const likeBtn = document.getElementById('like');
+
+            let isLiked = false;
+
+            likeBtn.addEventListener('click', () => {
+                isLiked = !isLiked; 
+
+                if (isLiked) {
+                    likeBtn.style.color = 'red';
+                } else {
+                    likeBtn.style.color = 'gray';
+                }
+            });
+        </script>
+    </body>
+
+    </html>
