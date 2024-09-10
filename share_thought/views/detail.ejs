@@ -28,7 +28,7 @@
                             <div class="circle-avatar">
                                 <i class="fa-solid fa-user fa-2x"></i>
                             </div>
-                            <p class="name">Yared Sebsbe</p>
+                            <p class="name"><%= result.name %></p>
                         </div>
                         <div class="comment-home">
                             <div class="comments">
@@ -40,29 +40,23 @@
                                     </div>
                                 </div>
                                 <div class="comment-card-wrapper">
-                                    <div class="comment-send" id="comment_input">
-                                        <input type="text" placeholder="name">
-                                        <input type="text" placeholder="comment">
-                                        <button>send</button>
-                                    </div>
-                                    <div class="comment-card">
-                                        <p>Yared Sebsbe</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
-                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
-                                            deleniti.</span>
-                                    </div>
-                                    <div class="comment-card">
-                                        <p>Yared Sebsbe</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
-                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
-                                            deleniti.</span>
-                                    </div>
-                                    <div class="comment-card">
-                                        <p>Yared Sebsbe</p>
-                                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quidem
-                                            debitis pariatur cupiditate voluptate et? Aspernatur iusto doloremque ab
-                                            deleniti.</span>
-                                    </div>
+                                    <form action="/vents/comment/<%= result._id  %>" method="post">
+                                        <div class="comment-send" id="comment_input">
+                                            <input type="text" placeholder="name" name="cName">
+                                            <input type="text" placeholder="comment" name="cText">
+                                            <button type="submit">send</button>
+                                        </div>
+                                    </form>
+                                    <% if(comments.length > 0) {
+                                        comments.forEach(comment => { %>
+                                            <div class="comment-card">
+                                                <p><%= comment.comments.cName %></p>
+                                                <span><%= comment.comments.cText %></span>
+                                            </div>
+                                    <% })
+                                    } else { %>
+                                        <p class="comment-warn">no comment for now.</p>
+                                <% } %>
                                 </div>
                             </div>
                         </div>

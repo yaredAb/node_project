@@ -7,6 +7,7 @@ router.get('/',controller.home)
 router.post('/vents',controller.postHome)
 router.get('/vents',controller.getHome)
 router.get('/vents/create_post',controller.create_post)
+router.post('/vents/comment/:id',controller.set_comment)
 router.get('/vents/:tag',controller.filter)
 router.get('/detail/:id',controller.detail)
 

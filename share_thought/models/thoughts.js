@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const thoughtSchema = Schema({
+    name:{
+        type: String,
+    },
     title: {
         type: String,
         required: true
@@ -12,10 +15,18 @@ const thoughtSchema = Schema({
     },
     tags: {
         type: Array
-    }
+    },
 
 }, {timestamps:true});
 
-const Narration = mongoose.model("Narration",thoughtSchema);
+const commentsSchema = Schema({
+    comments: {
+        type: Object
+    }
+})
 
-module.exports = Narration;
+const Narration = mongoose.model("Narration",thoughtSchema);
+const Comment = mongoose.model("Comment", commentsSchema)
+
+
+module.exports = {Narration,Comment};

@@ -298,6 +298,7 @@ form button:hover{
     margin: 5px 10px;
     padding: 5px;
     background-color: #dbf4f4;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .comment-send input:focus{
@@ -338,4 +339,11 @@ form button:hover{
     font-family: "PT Sans", sans-serif;
     color: #777;
     font-size: 14px;
+}
+
+.comment-warn{
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    color: rgb(172, 6, 6);
 }
