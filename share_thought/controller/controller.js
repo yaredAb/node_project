@@ -1,5 +1,18 @@
 const {Narration, Comment} = require('../models/thoughts')
 
+
+const handleError = (err) => {
+    let errors = {
+        title: '',
+        text: ''
+    }
+    if(err.message.includes('Narration validation failed')){
+        Object.values(err.errors).forEach(({properties}) => {
+            errors[properties.path] = properties.message
+        });
+        return errors;
+    }
+}
 const home = (req, res) => {
     res.redirect('/vents')
 }
@@ -31,11 +44,11 @@ const postHome = (req, res) => {
     });
     post.save()
         .then(result => res.redirect('/'))
-        .catch(err => console.log(err));
+        .catch(err =>res.render('create_post',{ title: 'Input  Error', errTitle : handleError(err).title, errText: handleError(err).text}));
 }
 
 const create_post = (req, res) => {
-    res.render('create_post', { title: 'Create a narration' });
+    res.render('create_post', { title: 'Create a narration', errTitle: '', errText: ''});
 }
 
 const filter = (req, res) => {
@@ -53,8 +66,6 @@ const detail = async (req, res) => {
         const result = await Narration.findById(id);
         const commentFilter = await Comment.find({ 'comments.ventId': id });
         res.render('detail', {title: 'Vent Detail', result: result, comments: commentFilter})
-        console.log(result);    
-        console.log(commentFilter);       
 
     }catch(err){
         console.log(err)

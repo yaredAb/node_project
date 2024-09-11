@@ -7,11 +7,11 @@ const thoughtSchema = Schema({
     },
     title: {
         type: String,
-        required: true
+        required: [true, 'title is required']
     },
     text: {
         type: String,
-        required: true
+        required: [true, 'please share your experience']
     },
     tags: {
         type: Array

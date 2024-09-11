@@ -216,6 +216,17 @@ form button:hover{
     font-family: "PT Sans", sans-serif;
 }
 
+.field-texts{
+    display: flex;
+    gap: 10px;
+}
+
+.input-warning{
+    color: red;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+}
+
 .detail-wrapper{
     width: 80%;
     margin: 0 auto;
