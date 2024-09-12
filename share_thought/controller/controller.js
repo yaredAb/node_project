@@ -93,8 +93,11 @@ const set_comment = (req, res) => {
         .then((result) => res.redirect('/detail/'+id))
         .catch(err => console.log("error"))
     }
+const about = (req,res) => {
+    res.render('about', {title: 'About me'})
+}
 
     module.exports = {
-        home, getHome, postHome, create_post, filter, detail, set_comment
+        home, getHome, postHome, create_post, filter, detail, set_comment, about
     }
 

@@ -10,7 +10,7 @@
                             <h3>
                                 <%= result.title %>
                             </h3>
-                            <p>
+                            <p class="detail-text">
                                 <%= result.text %>
                             </p>
                             <% result.tags.forEach(tag=>{%>
@@ -18,9 +18,9 @@
                                 <% }) %>
                         </div>
                         <div class="icons"><!--the icons-->
-                            <i class="fa-solid fa-heart fa-1x" id="like"></i>
-                            <i class="fa-solid fa-comment"></i>
-                            <i class="fa-solid fa-copy"></i>
+                            <!-- <i class="fa-solid fa-heart fa-1x" id="like"></i> -->
+                            <!-- <i class="fa-solid fa-comment"></i> -->
+                            <!-- <i class="fa-solid fa-copy"></i> -->
                         </div>
                     </div><!--the post card ended here-->
                     <div class="side-tab">
@@ -66,7 +66,7 @@
         <script src="https://kit.fontawesome.com/d3383a5202.js" crossorigin="anonymous"></script>
         <script>
 
-            const likeBtn = document.getElementById('like');
+            /* const likeBtn = document.getElementById('like');
 
             let isLiked = false;
 
@@ -83,7 +83,7 @@
             const write_toogle = document.getElementById('write_toogle');
             const comment_input = document.getElementById('comment_input');
             const ic = document.getElementById('ic');
-            const ic_txt = document.getElementById('ic-text')
+            const ic_txt = document.getElementById('ic-text') */
 
             let isClicked = false;
 

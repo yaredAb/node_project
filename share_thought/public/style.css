@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nerko+One&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Sofadi+One&display=swap');
 
 a{
     text-decoration: none;
@@ -70,6 +71,10 @@ li a{
     text-decoration: none;
     color: #cd5600;
     padding: 5px;
+}
+
+.detail-text{
+    margin-bottom: 10px;
 }
 
 .detail-btn{
@@ -357,4 +362,51 @@ form button:hover{
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     color: rgb(172, 6, 6);
+}
+
+/* about page styles */
+
+.about-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-wrapper h1{
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 3em;
+    padding: 10px 0;
+}
+.about-wrapper p{
+    width: 60%;
+    background-color: #7271711c;
+    padding: 2em;
+    letter-spacing: 2px;
+    border-radius: 8px;
+    font-family: "Josefin Slab", serif;
+    color: #0a0a0a;
+    font-size: 18px;
+    text-align: center;
+}
+
+.about-wrapper .about-footer{
+    margin-top: 30px;
+    font-family: "Sofadi One", system-ui;
+    color: #0990f0;
+}
+
+.about-wrapper .middle{
+    padding: 0 25px;
+}
+
+.about-footer a{
+    color: #8c09f0;
+}
+
+.about-wrapper .about-name{
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-family: "Josefin Slab", serif;
+    font-weight: bold;
 }
